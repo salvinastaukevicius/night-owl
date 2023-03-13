@@ -41,3 +41,17 @@ body {
     font-weight: 200;
     color: rgb(148, 148, 148);
 }
+
+#navBar {
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2C74B3;
+  color: #333;
+  height: 50px;
+  display: flex;
+  
+  justify-content: space-between;
+  
+}

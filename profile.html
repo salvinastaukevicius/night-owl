@@ -24,7 +24,7 @@
         </section>
 
         <section id="flex">
-            <span id="textSettingsLabels">Connect your lights</span>
+            <span onclick="redirectToLights()" id="textSettingsLabels">Connect your lights</span>
             <img id="image-arrow" src="/arrow-right.svg" alt="arrow">
         </section>
 
@@ -32,6 +32,12 @@
             <span id="textSettingsLabels">Language</span>
             <span id="textEnglish">English</span>
         </section>
+    </section>
+
+    <section id="navBar"> 
+        <span onclick="redirectToSleep()" >sleep</span>
+        <span onclick="redirectToHome()">home</span>
+        <span onclick="redirectToProfile()">profile</span>
     </section>
 
     <script src="profile.js"></script>

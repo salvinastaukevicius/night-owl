@@ -13,49 +13,50 @@ const getSpanMonthAndDay = document.getElementById("dayAndMonth");
 getSpanOfDayNameOfToday.innerHTML = dayNameOfToday;
 getSpanMonthAndDay.innerHTML = dayOfMonth +  " " + month;
 
-function fetchData(callback) {
-    const bridgeIP = "192.168.0.100"; // Replace with your own Bridge IP address
-    const username = "salvinas1765"; // Replace with your own desired username
-    
-    fetch(`http://${bridgeIP}/api`, {
-      method: "POST",
-      body: JSON.stringify({ devicetype: `myapp#${username}` })
-    }).then(response => response.json())
-      .then(data => {
-        const username = data[0].success.username;
-        callback(username)
-    });
-};
 
-const ButtonOn = document.getElementById("turnOn");
-
-function processData(data) {
-ButtonOn.addEventListener('click', function() {
-
+function getCookie(name) {
+    let cookies = document.cookie.split(";");
   
-    console.log(data)
-    const bridgeIP = "192.168.0.100";
-const apiKey = data;
-const lightId = 14;
+    for (let i = 0; i < cookies.length; i++) {
+      let cookie = cookies[i].trim();
+  
+      if (cookie.startsWith(name + "=")) {
+        return cookie.substring(name.length + 1);
+      }
+    }
+  
+    return null;
+  }
+  
+  let gotTheKey = getCookie("cookieIp");
+  let usernames = getCookie('cookieKey')
+  console.log(usernames);
+  console.log(gotTheKey);
 
-// Turn the light on
-fetch(`http://${bridgeIP}/api/${apiKey}/lights/${lightId}/state`, {
-  method: "PUT",
-  body: JSON.stringify({ on: true })
-}).then(response => console.log(response));
+const ButtonOn1 = document.getElementById("turnOn");
+const buttonOff = document.getElementById("turnOff");
 
-// Turn the light off
-// fetch(`http://${bridgeIP}/api/${apiKey}/lights/${lightId}/state`, {
-//   method: "PUT",
-//   body: JSON.stringify({ on: false })
-// }).then(response => console.log(response));
+ButtonOn1.addEventListener("click", function () {
+  console.log('hi');
+  var bridgeIP = gotTheKey;
+  const apiKey = usernames;
+  const lightId = 14;
+  fetch(`http://${bridgeIP}/api/${apiKey}/lights/${lightId}/state`, {
+    method: "PUT",
+    body: JSON.stringify({ on: true }),
+  }).then((response) => console.log(response));
+});
 
-})
-};
-
-
-fetchData(processData);
-
+buttonOff.addEventListener("click", function () {
+    console.log('hi');
+    var bridgeIP = gotTheKey;
+    const apiKey = usernames;
+    const lightId = 14;
+    fetch(`http://${bridgeIP}/api/${apiKey}/lights/${lightId}/state`, {
+      method: "PUT",
+      body: JSON.stringify({ on: false }),
+    }).then((response) => console.log(response));
+  });
 
 
 
