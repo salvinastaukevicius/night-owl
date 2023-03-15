@@ -49,9 +49,14 @@ body {
   width: 100%;
   background-color: #2C74B3;
   color: #333;
-  height: 50px;
+  height: 80px;
   display: flex;
-  
-  justify-content: space-between;
-  
+  justify-content: space-around;
+}
+
+
+#homeIcon {
+    height: 40px;
+    width: auto;
+    margin-top: 10px;
 }

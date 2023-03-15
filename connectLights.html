@@ -20,10 +20,22 @@
         <input type="text" id="ipInput">
         <span id="textUseThisIP">Use this IP</span>
     </section>
+    <span id="information"></span>
+    <br>
+    <br>
+    <span>Press bridge button, then "bridge pressed" button</span> <br>
+    <span id="connect">Bridge pressed</span>
+
+
+    <span id="turnon">Confirm</span>
+    <span id="confirmation"></span>
     
-    <span id="turnon">turn on</span>
-    <span id="connect">connect</span>
-    
+
+    <section id="navBar"> 
+        <img id="homeIcon" src="/sleep-icon.svg" onclick="redirectToSleep()" ></img>
+        <img id="homeIcon" src="/home-icon1.svg" onclick="redirectToHome()"></img>
+        <img id="homeIcon" src="/profile-icon1.svg" onclick="redirectToProfile()"></img>
+    </section>
     
     <script src="connectLights.js"></script>
 </body>

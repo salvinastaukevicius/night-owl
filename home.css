@@ -9,7 +9,7 @@ body {
 
 #dayNameOfToday {
     font-size: 35px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 10px;
     display: block;
     font-weight: bold;
@@ -120,11 +120,9 @@ body {
   width: 100%;
   background-color: #2C74B3;
   color: #333;
-  height: 50px;
+  height: 80px;
   display: flex;
-  
-  justify-content: space-between;
-  border: 1px solid red;
+  justify-content: space-around;
 }
 
 #lightControlInner{
@@ -164,4 +162,8 @@ body {
     border-radius: 15px;
 }
 
-
+#homeIcon {
+    height: 40px;
+    width: auto;
+    margin-top: 10px;
+}
